@@ -19,6 +19,11 @@ public class Fruit {
 	public void setCantidad(String cantidad) {
 		this.cantidad = cantidad;
 	}
+	@Override
+	public String toString() {
+		return "Fruit [nombre=" + nombre + ", cantidad=" + cantidad + "]";
+	}
+	
 	
 
 }

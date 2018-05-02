@@ -1,0 +1,63 @@
+
+		import java.util.*;
+
+import javax.swing.text.html.HTMLDocument.Iterator;
+
+		public class Main{
+
+			public static void main(String[] args) {
+				// TODO Auto-generated method stub
+  
+				TreeMap<String, String> mapaContrasenias = new TreeMap<String, String>();
+				
+				
+				
+				Usuario unUsuario= null;
+				String nombre="";
+				String clave="";
+				
+				Leer.mostrarEnPantalla("desa crear un usuario???");
+				
+				int opcion =0;
+				opcion=Leer.pedirEntero("opcion:\n1-crear Usuario y contraseña \n2-visualizar todos");
+						while (opcion!=0){
+							
+							
+						
+	switch (opcion) {
+	case 1:
+		nombre=Leer.pedirCadena("dime el nombre");
+		clave=Leer.pedirCadena("dime la clave");
+		unUsuario = new Usuario(nombre,clave);
+		Leer.mostrarEnPantalla("el maestro esta creando");
+		System.out.println(unUsuario);
+		
+		break;
+	case 2:
+		System.out.println(unUsuario);
+		
+		
+		break;
+
+	default:
+		break;
+			
+	}//end switch 
+							
+							opcion=Leer.pedirEntero("opcion:\n1-crear Usuario y contraseña \n2-visualizar todos");
+		
+							
+	}//end while
+					
+				
+				
+				
+				
+				
+				
+
+			}
+		}
+	
+
+
