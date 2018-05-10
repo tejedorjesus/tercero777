@@ -1,0 +1,37 @@
+
+public class Plato {
+	
+	private String Ingrediente1="";
+	private String Ingrediente2="";
+	private String Ingrediente3="";
+	final Integer PrecioIngerdiente=2;
+	private String NombrePlato="";
+	public String getIngrediente1() {
+		return Ingrediente1;
+	}
+	public void setIngrediente1(String ingrediente1) {
+		Ingrediente1 = ingrediente1;
+	}
+	public String getIngrediente2() {
+		return Ingrediente2;
+	}
+	public void setIngrediente2(String ingrediente2) {
+		Ingrediente2 = ingrediente2;
+	}
+	public String getIngrediente3() {
+		return Ingrediente3;
+	}
+	public void setIngrediente3(String ingrediente3) {
+		Ingrediente3 = ingrediente3;
+	}
+	public String getNombrePlato() {
+		return NombrePlato;
+	}
+	public void setNombrePlato(String nombrePlato) {
+		NombrePlato = nombrePlato;
+	}
+	public Integer getPrecioIngerdiente() {
+		return PrecioIngerdiente;
+	}
+	
+}

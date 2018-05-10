@@ -1,0 +1,41 @@
+import java.util.*;
+public class Principal {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		TreeMap<Integer,ArrayList<Integer>>MapaNota1=new TreeMap <Integer,ArrayList<Integer>>();
+		TreeMap<Integer,ArrayList<Integer>>MapaNota2=new TreeMap <Integer,ArrayList<Integer>>();
+		TreeMap<Integer,ArrayList<Integer>>MapaNota3=new TreeMap <Integer,ArrayList<Integer>>();
+		
+		
+		String[] nombres = { "Rafa", "Jesus", "Raul", "Diego", "Cristian", "Pepe", "Luis", "Jose Antonio", "Eric",
+		"German" };
+		String[] apellidos = { "Garcia", "Perez", "Brey", "Losantos", "Cifuentes", "Casado", "Bañez", "Franco",
+				"Blanco", "Jimenez" };
+		Random rand = new Random();
+		Alumno[] unAlumno=null;
+		unAlumno = new Alumno[50];
+		for (int i = 0; i < unAlumno.length; i++) {
+			unAlumno[i]=new Alumno (nombres[rand.nextInt(nombres.length)],apellidos[rand.nextInt(apellidos.length)],
+					rand.nextInt(100), rand.nextInt(100),rand.nextInt(100));
+			
+			
+		}
+		for (int i = 0; i < unAlumno.length; i++) {
+			System.out.println(unAlumno[i]);
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+	}
+
+}

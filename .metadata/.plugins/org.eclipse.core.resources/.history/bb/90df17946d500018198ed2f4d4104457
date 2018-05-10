@@ -1,0 +1,85 @@
+
+		import java.util.*;
+
+
+
+
+
+		public class Main{
+
+			public static void main(String[] args) {
+				// TODO Auto-generated method stub
+  
+				TreeMap<String, String> mapaContrasenias = new TreeMap<String, String>();
+				
+				
+				
+				Usuario unUsuario= null;
+		
+					
+				
+				Leer.mostrarEnPantalla("desa crear un usuario???");
+				
+				int opcion =0;
+				opcion=Leer.pedirEntero("opcion:\n1-crear Usuario y contraseña\n3-visualizar todos\n2-Borrar usuario");
+						while (opcion!=0){
+							
+							
+						
+	switch (opcion) {
+	case 1:
+		String usuario;
+		String contrasenia;
+
+		usuario = Leer.pedirCadena("Crear un usuario");
+		contrasenia = Leer.pedirCadena("Introduza la contrasenia:", "[a-zA-Z0-9]{6}");
+		Leer.mostrarEnPantalla(
+				"Tu contrasenia y tu usuario son:" + "\n Usuario:" + usuario + "\n Contrasenia:" + contrasenia);
+		mapaContrasenias.put(usuario,contrasenia);
+		break;
+	case 2:
+		
+		System.out.println(mapaContrasenias);
+		
+		
+		
+		
+		
+	case 3:
+		String nombreBorrar ="";
+		nombreBorrar=Leer.pedirCadena("Introduzca el nombre que desea borrar");
+		if (mapaContrasenias.containsKey(nombreBorrar)){
+			System.out.println("--------borrando-----------"+nombreBorrar);
+			mapaContrasenias.remove(nombreBorrar);
+		}else{
+			System.out.println("ese nombre no aparece en la lista");
+		}
+					
+				
+				
+		
+		
+		break;
+
+	default:
+		break;
+			
+	}//end switch 
+							
+							opcion=Leer.pedirEntero("opcion:\n1-crear Usuario y contraseña \n2-visualizar todos");
+		
+							
+	}//end while
+					
+				
+				
+				
+				
+				
+				
+
+			}
+		}
+	
+
+
