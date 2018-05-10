@@ -130,7 +130,10 @@ public class Principal {
 				} else {
 					System.out.println("lo sentimos pero ese plato no aparece en nuestro menú");
 				}
-			
+				
+
+				System.out.println(unMenu[MapaMenu.get(plato1)]);
+				System.out.println(unMenu[MapaMenu.get(plato2)]);
 				break;
 
 			case 2:
@@ -155,12 +158,12 @@ public class Principal {
 					System.out.println("\n");
 					System.out.println(unMenu[MapaMenu.get(primero)]);
 					System.out.println(unMenu[MapaMenu.get(segundo)]);
+					System.out.println("\n");
+
 					Integer precioTotal;
 					precioTotal = unMenu[MapaMenu.get(primero)].getPrecioTotal()
 							+ unMenu[MapaMenu.get(segundo)].getPrecioTotal();
-					System.out.println("La cantidad total a pagar es  " + unMenu[MapaMenu.get(primero)].getPrecioTotal()
-							+ " euros por el primer plato y " + unMenu[MapaMenu.get(segundo)].getPrecioTotal() 
-							+ " euros por el segundo lo que hace un total de : " + precioTotal + " euros");
+					System.out.println("La cantidad total a pagar es " + precioTotal + " Euros");
 				} else {
 					System.out.println("llamaremos a la policia");
 				}

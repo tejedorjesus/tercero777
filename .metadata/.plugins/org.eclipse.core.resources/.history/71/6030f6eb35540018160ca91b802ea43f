@@ -115,14 +115,11 @@ public class Principal {
 
 				if (MapaMenu.containsKey(plato1)) {// COMO HAGO PARA PODER
 													// METERLE MAYUSCULAS
-					System.out
-							.println("Perfecto disponemosde ese plato en el menú ahora vamos a por el segundo plato ");
+					System.out.println("Perfecto disponemosde ese plato en el menú ahora vamos a por el segundo plato ");
 
 					plato2 = Leer.pedirCadena("elija un plato de los que aparecen en la lista");
 					if (MapaMenu.containsKey(plato2)) {
 						System.out.println("Perfecto disponemos de ese plato en el menú ahora le servimos ");
-						System.out.println(unMenu[MapaMenu.get(plato1)]);
-						System.out.println(unMenu[MapaMenu.get(plato2)]);
 
 					} else {
 						System.out.println("lo sentimos pero ese plato no aparece en nuestro menú");
@@ -130,40 +127,29 @@ public class Principal {
 				} else {
 					System.out.println("lo sentimos pero ese plato no aparece en nuestro menú");
 				}
-			
 				break;
 
-			case 2:
+				/*System.out.println("\n");
+				System.out.println("Esperemos que haya comido bien le vamos a sacar la cuenta Rockefeller.......");
 
-				String primero = "";
-				String segundo = "";
-
-				primero = Leer.pedirCadena("¿Que comió como primer plato");
-
-				segundo = Leer.pedirCadena("¿Que comió como segundo plato");
-				System.out.println("\n\n");
-
-				System.out.println(unMenu[MapaMenu.get(primero)]);
-				System.out.println(unMenu[MapaMenu.get(segundo)]);
+				System.out.println(unMenu[MapaMenu.get(plato1)]);
+				System.out.println(unMenu[MapaMenu.get(plato2)]);
 
 				String respuesta = "";
 				respuesta = Leer.pedirCadena("Desea pedir la cuenta 'si' o 'no' ");
 
 				if (respuesta.equals("si")) {
-					System.out.println(
-							"-------------------------Calculando cuenta-------------------------------------------------");
-					System.out.println("\n");
-					System.out.println(unMenu[MapaMenu.get(primero)]);
-					System.out.println(unMenu[MapaMenu.get(segundo)]);
+
 					Integer precioTotal;
-					precioTotal = unMenu[MapaMenu.get(primero)].getPrecioTotal()
-							+ unMenu[MapaMenu.get(segundo)].getPrecioTotal();
-					System.out.println("La cantidad total a pagar es  " + unMenu[MapaMenu.get(primero)].getPrecioTotal()
-							+ " euros por el primer plato y " + unMenu[MapaMenu.get(segundo)].getPrecioTotal() 
-							+ " euros por el segundo lo que hace un total de : " + precioTotal + " euros");
+					precioTotal = unMenu[MapaMenu.get(plato1)].getPrecioTotal()
+							+ unMenu[MapaMenu.get(plato2)].getPrecioTotal();
+					System.out.println("La cantidad total a pagar es " + precioTotal + " Euros");
 				} else {
 					System.out.println("llamaremos a la policia");
 				}
+
+				break;*/
+			case 2:
 
 				break;
 

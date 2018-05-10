@@ -8,8 +8,6 @@ public class TreemapNotasAlumnosPorApellido {
 		FicheroTexto fichTexto = new FicheroTexto("C:/Users/JESUS/Desktop/fichero.txt","I");//Apertura del fichero de entrada.donde leemos
 		leeFichero(mapaAlumnos, fichTexto);
 		Leer.mostrarEnPantalla(mapaAlumnos.toString());
-		
-		
 		apellido=Leer.pedirCadena("Apellido (\"*\": fin)");
 		while(!apellido.equals("*")){
 			if(mapaAlumnos.containsKey(apellido)){
