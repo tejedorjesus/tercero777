@@ -10,8 +10,7 @@ public class Principal {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String plato1 = "";
-		String plato2 = "";
+
 		Random rand = new Random();
 		Menu[] unMenu = null;
 
@@ -109,7 +108,8 @@ public class Principal {
 
 			switch (opcion) {
 			case 1:
-
+				String plato1 = "";
+				String plato2 = "";
 
 				plato1 = Leer.pedirCadena("elgija un plato de los que aparecen en la lista");
 
@@ -135,10 +135,16 @@ public class Principal {
 
 			case 2:
 
+				String primero = "";
+				String segundo = "";
+
+				primero = Leer.pedirCadena("¿Que comió como primer plato");
+
+				segundo = Leer.pedirCadena("¿Que comió como segundo plato");
 				System.out.println("\n\n");
 
-				System.out.println(unMenu[MapaMenu.get(plato1)]);
-				System.out.println(unMenu[MapaMenu.get(plato2)]);
+				System.out.println(unMenu[MapaMenu.get(primero)]);
+				System.out.println(unMenu[MapaMenu.get(segundo)]);
 
 				String respuesta = "";
 				respuesta = Leer.pedirCadena("Desea pedir la cuenta 'si' o 'no' ");
@@ -147,13 +153,13 @@ public class Principal {
 					System.out.println(
 							"-------------------------Calculando cuenta-------------------------------------------------");
 					System.out.println("\n");
-					System.out.println(unMenu[MapaMenu.get(plato1)]);
-					System.out.println(unMenu[MapaMenu.get(plato2)]);
+					System.out.println(unMenu[MapaMenu.get(primero)]);
+					System.out.println(unMenu[MapaMenu.get(segundo)]);
 					Integer precioTotal;
-					precioTotal = unMenu[MapaMenu.get(plato1)].getPrecioTotal()
-							+ unMenu[MapaMenu.get(plato2)].getPrecioTotal();
-					System.out.println("La cantidad total a pagar es  " + unMenu[MapaMenu.get(plato1)].getPrecioTotal()
-							+ " euros por el primer plato y " + unMenu[MapaMenu.get(plato2)].getPrecioTotal() 
+					precioTotal = unMenu[MapaMenu.get(primero)].getPrecioTotal()
+							+ unMenu[MapaMenu.get(segundo)].getPrecioTotal();
+					System.out.println("La cantidad total a pagar es  " + unMenu[MapaMenu.get(primero)].getPrecioTotal()
+							+ " euros por el primer plato y " + unMenu[MapaMenu.get(segundo)].getPrecioTotal() 
 							+ " euros por el segundo lo que hace un total de : " + precioTotal + " euros");
 				} else {
 					System.out.println("llamaremos a la policia");

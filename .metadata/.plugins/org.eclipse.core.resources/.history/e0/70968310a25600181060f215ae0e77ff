@@ -26,10 +26,10 @@ public class TreemapNotasAlumnosPorApellido {
 		ficheroObjeto = new FicheroObjeto("fichMapAluApe.da2","O");//abrimos el fichero para escritura
 		ficheroObjeto.escribir(mapaAlumnos);
 		ficheroObjeto.cerrar("O");
-		
+		System.out.println("-------pueba");
 		//mostramos el primer mapa
 		muestraMapa(mapaAlumnos);
-	
+		System.out.println("-------pueba");
 		System.out.println("-------pueba");
 	
 		 

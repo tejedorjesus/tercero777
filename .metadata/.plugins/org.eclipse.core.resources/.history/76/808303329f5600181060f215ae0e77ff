@@ -119,7 +119,7 @@ public class Principal {
 							.println("Perfecto disponemosde ese plato en el menú ahora vamos a por el segundo plato ");
 
 					plato2 = Leer.pedirCadena("elija un plato de los que aparecen en la lista");
-					if (MapaMenu.containsKey(plato2)) {
+					if (MapaMenu.containsKey(plato2.ig)) {
 						System.out.println("Perfecto disponemos de ese plato en el menú ahora le servimos ");
 						System.out.println(unMenu[MapaMenu.get(plato1)]);
 						System.out.println(unMenu[MapaMenu.get(plato2)]);

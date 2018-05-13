@@ -26,12 +26,9 @@ public class TreemapNotasAlumnosPorApellido {
 		ficheroObjeto = new FicheroObjeto("fichMapAluApe.da2","O");//abrimos el fichero para escritura
 		ficheroObjeto.escribir(mapaAlumnos);
 		ficheroObjeto.cerrar("O");
-		
+
 		//mostramos el primer mapa
 		muestraMapa(mapaAlumnos);
-	
-		System.out.println("-------pueba");
-	
 		 
 		FicheroObjeto ficheroObjeto2;
 		TreeMap<String,Integer> mapaAlumnos2=new TreeMap<String, Integer>();// lee del archivo de objetos y se lleva al metodo mosstrar mapa el mapa que queremos ver
