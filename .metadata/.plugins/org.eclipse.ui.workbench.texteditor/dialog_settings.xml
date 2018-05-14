@@ -4,10 +4,11 @@
 		<item value="false" key="isRegEx"/>
 		<item value="" key="selection"/>
 		<item value="false" key="casesensitive"/>
-		<item value="false" key="incremental"/>
+		<item value="true" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="apellidos"/>
 			<item value="Persona"/>
 			<item value="persona"/>
 			<item value="mostra"/>

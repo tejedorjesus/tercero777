@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;ListaVaciaexception.java&apos; to &apos;ListaVaciaException.java&apos;&#x0D;&#x0A;- Original project: &apos;ListaPersonas&apos;&#x0D;&#x0A;- Original element: &apos;ListaVaciaexception.java&apos;&#x0D;&#x0A;- Renamed element: &apos;ListaVaciaException.java&apos;" description="Rename compilation unit &apos;ListaVaciaexception.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;{ListaVaciaexception.java" name="ListaVaciaException.java" references="false" stamp="1526237709737" version="1.0"/>
+</session>

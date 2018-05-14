@@ -1,4 +1,5 @@
 
+
 public class Registro implements Separable{
 	private String apellido;
 	private int nota;

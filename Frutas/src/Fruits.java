@@ -8,7 +8,7 @@ public class Fruits {
 		
 		Fruit[] Fruits = null;
 		
-		Fruits[0] =(new Fruit ("pineapple","7"));
+		Fruits[] =(new Fruit ("pineapple","7"));
 	
 		
 		for (int j = 0; j < Fruits.length; j++) {

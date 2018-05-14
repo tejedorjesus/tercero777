@@ -16,6 +16,7 @@ public class Principal {
 		Random rand = new Random();
 		Alumno[] unAlumno=null;
 
+		
 
 
 
@@ -64,7 +65,9 @@ public class Principal {
 						MapaNota1.put(NotaMapa,ListaIndicesNombresAlumnos);
 					}
 					else{
-						MapaNota1.get(NotaMapa).add(indice);			
+						MapaNota1.get(NotaMapa).add(indice);	//a esa direccion de memoria le metes el indice no 
+																// pongo put porque la nota ya esta y no la voy a poner
+																//dos veces
 					}
 				}
 		

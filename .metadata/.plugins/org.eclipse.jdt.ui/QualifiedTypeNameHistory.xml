@@ -4,4 +4,13 @@
 <fullyQualifiedTypeName name="Leer"/>
 <fullyQualifiedTypeName name="javax.xml.bind.ParseConversionEvent"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="java.nio.channels.FileLock"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="java.io.FileDescriptor"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="java.util.TreeMap"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="java.util.RandomAccess"/>
+<fullyQualifiedTypeName name="java.util.concurrent.ConcurrentHashMap.KeySetView"/>
 </qualifiedTypeNameHistroy>

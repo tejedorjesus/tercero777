@@ -1,14 +1,15 @@
 import java.io.*;
 
+
 public class FicheroTexto implements Separable{
 	private BufferedReader entrada;
 	private BufferedWriter salida;
 
-	public FicheroTexto(String nombre, String io){
+	public FicheroTexto(String nobreDelFichero, String io){
 
 		if (io.equals("I")){//abrir el fichero para leer
 			try{
-				entrada=new BufferedReader(new FileReader(nombre));//asignar fichero a buffer
+				entrada=new BufferedReader(new FileReader(nobreDelFichero));//asignar fichero a buffer
 			}catch(IOException e){//controlar el error
 				Leer.mostrarEnPantalla("Error al abrir el archivo de entrada "+e.getMessage());
 				System.exit(1);
@@ -16,7 +17,7 @@ public class FicheroTexto implements Separable{
 		}
 		if (io.equals("O")){//abrir el fichero para escribir
 			try{
-				salida=new BufferedWriter(new FileWriter(nombre,true));//asignar fichero a buffer
+				salida=new BufferedWriter(new FileWriter(nobreDelFichero,true));//asignar fichero a buffer
 			}catch(IOException e){//controlar el error
 				Leer.mostrarEnPantalla("Error al abrir el archivo de salida "+e.getMessage());
 				System.exit(1);
@@ -70,6 +71,8 @@ public class FicheroTexto implements Separable{
 	    }
 		return true;
 	}
+	
+	
 	
 	public void cerrar(String io){ 
 		try{
