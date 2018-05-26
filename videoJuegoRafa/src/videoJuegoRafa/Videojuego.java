@@ -1,0 +1,79 @@
+
+package videoJuegoRafa;
+import java.io.Serializable;
+
+/**
+ * 
+ * @author Rafa
+ *
+ */
+public class Videojuego implements Comparable<Videojuego> , Serializable{
+	private String nombre;
+	private String fabricante;
+	private Integer edadMinima;
+	private Float precio;
+	private String plataformas;
+	private Integer unidadesVendidas;
+	private String formaJuego;
+
+	public Videojuego(String nombre, String fabricante, Integer edadMinima, Float precio, String plataformas,
+			Integer unidadesVendidas, String formaJuego) {
+		super();
+		this.nombre = nombre;
+		this.fabricante = fabricante;
+		this.edadMinima = edadMinima;
+		this.precio = precio;
+		this.plataformas = plataformas;
+		this.unidadesVendidas = unidadesVendidas;
+		this.formaJuego = formaJuego;
+	}
+
+	public String getPlataformas() {
+		return plataformas;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public String getFabricante() {
+		return fabricante;
+	}
+
+	public Integer getEdadMinima() {
+		return edadMinima;
+	}
+
+	public Float getPrecio() {
+		return precio;
+	}
+
+	public Integer getUnidadesVendidas() {
+		return unidadesVendidas;
+	}
+
+	public String getFormaJuego() {
+		return formaJuego;
+	}
+
+	
+	public void setPrecio(Float precio) {
+		this.precio = precio;
+	}
+
+	public void setUnidadesVendidas(Integer unidadesVendidas) {
+		this.unidadesVendidas = unidadesVendidas;
+	}
+
+	@Override
+	public String toString() {
+		return "Videojuego [nombre=" + nombre + ", fabricante=" + fabricante + ", edadMinima=" + edadMinima
+				+ ", precio=" + precio + ", plataformas=" + plataformas + ", unidadesVendidas=" + unidadesVendidas
+				+ ", formaJuego=" + formaJuego + "]";
+	}
+
+	@Override
+	public int compareTo(Videojuego unJuego) {
+		return 0;
+	}
+}

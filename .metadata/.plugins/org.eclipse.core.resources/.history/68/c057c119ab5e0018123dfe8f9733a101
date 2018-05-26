@@ -1,0 +1,190 @@
+package videoJuegoRafa;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.TreeMap;
+
+/**
+ * 
+ * @author Rafa
+ *
+ */
+public class GestionVideojuegos {
+
+	public static void main(String[] args) {
+		LinkedList<Videojuego> lista = new LinkedList<Videojuego>();
+
+		// Funciona bien pero la clase FicheroObjeto, no tiene un método para
+		// saber si el fichero de objetos ya existe, por lo que uno de los siguientes
+		// bloques (bloque 1 y bloque 2) debe de estar comentado para que el
+		// programa funcione correctamente
+		
+		// ****BLOQUE1****
+		//En el fichero están los juegos iniciales más uno creado (Dado de alta)
+		FicheroObjeto ficheroObjeto;
+		ficheroObjeto = new FicheroObjeto("videojuegos.dat", "I");
+		lista = ficheroObjeto.leer();
+		// ****BLOQUE1****
+
+		
+		
+		// ****BLOQUE2****
+		//crearJuegos(lista);
+		// ****BLOQUE2****
+
+		int opcion = menu();
+		while (opcion != 0) {
+			switch (opcion) {
+			case 1:
+				altaVideojuegos(lista);
+				// ...
+				break;
+			case 2:
+				bajaVideojuegos(lista);
+				// ...
+				break;
+			case 3:
+				modificaVideojuegos(lista);
+				// ...
+				break;
+			case 4:// listado por nombre fabricante y si es igual por nombre
+				Collections.sort(lista, compararNombre);
+				for (Videojuego videojuego : lista) {
+					System.out.println(videojuego);
+				}
+				break;
+			case 5: // listado de videojuegos por nombre
+				Collections.sort(lista, compararFabricante);
+				for (Videojuego videojuego : lista) {
+					System.out.println(videojuego);
+				}
+			}
+			opcion = menu();
+		}
+		FicheroObjeto ficheroObjetoV;
+		ficheroObjetoV = new FicheroObjeto("videojuegos.dat", "O");
+		ficheroObjetoV.escribir(lista);
+		ficheroObjetoV.cerrar("O");
+
+	}// main
+
+	public static void guardarListaEnFichero(LinkedList<Videojuego> lista) {
+		FicheroObjeto ficheroObjeto;
+		ficheroObjeto = new FicheroObjeto("videojuegos.dat", "O");
+		ficheroObjeto.escribir(lista);
+		ficheroObjeto.cerrar("O");
+	}
+
+	public static void crearJuegos(LinkedList<Videojuego> listaJuegos) {
+		String[] juegos = { "League of legends", "Final Fantasy XXVII", "Star Wars", "FIFA 2020" };
+		String[] fabricantes = { "F1", "F1", "F2", "F3" };
+		Integer[] edadesMinimas = { 12, 14, 15, 8 };
+		Float[] precios = { 20.f, 30.f, 35.f, 25.f };
+		String[] plataformas = { "PC", "PC", "XBox", "Play Station" };
+		Integer[] unidadesVendidas = { 1000, 900, 2000, 1300 };
+		String[] formasJuegos = { "En red", "Multijugador", "Multijugador", "En red" };
+		int i;
+		Videojuego juego;
+		for (i = 0; i < juegos.length; i++) {
+			juego = new Videojuego(juegos[i], fabricantes[i], edadesMinimas[i], precios[i], plataformas[i],
+					unidadesVendidas[i], formasJuegos[i]);
+			listaJuegos.add(juego);
+		}
+	}// crearJuegos
+
+	/**
+	 * 
+	 * @param lista
+	 *            de videojuegos
+	 */
+	private static void altaVideojuegos(LinkedList<Videojuego> lista) {
+		// Se piden por teclado los diferentes atributos de un juego para darlo
+		// de alta
+		Videojuego nuevoJuego;
+		String nombre = Leer.pedirCadena("Nombre del videojuego?");
+		String fabricante = Leer.pedirCadena("Nombre del Fabricante?");
+		Integer edadMinima = Leer.pedirEntero("Edad minima?");
+		Float precio = Leer.pedirFloat("Precio?");
+		String plataformas = Leer.pedirCadena("Plataforma?");
+		Integer unidadesVendidas = Leer.pedirEntero("Unidades vendidas?");
+		String formaJuego = Leer.pedirCadena("Forma de juego?");
+		nuevoJuego = new Videojuego(nombre, fabricante, edadMinima, precio, plataformas, unidadesVendidas, formaJuego);
+		lista.add(nuevoJuego);
+		System.out.println("Se ha dado de alta el videojuego " + nuevoJuego.getNombre());
+	}// altaVideojuegos
+
+	private static void bajaVideojuegos(LinkedList<Videojuego> lista) {
+		for (Videojuego videojuego : lista) {
+			System.out.println(videojuego);
+		}
+		Videojuego unJuego;
+		String nombre = Leer.pedirCadena("Elige el nombre del videojuego que quieres dar de baja");
+		Iterator<Videojuego> itr = lista.iterator();
+		while (itr.hasNext()) {
+			unJuego = itr.next();
+			if (unJuego.getNombre().toLowerCase().equals(nombre.toLowerCase())) {
+				itr.remove();
+				System.out.println(nombre + " dado de baja");
+			}
+		}
+	}// bajaVideojuegos
+
+	private static void modificaVideojuegos(LinkedList<Videojuego> lista) {
+		for (Videojuego videojuego : lista) {
+			System.out.println(videojuego);
+		}
+		Videojuego unJuego;
+		Float nuevoPrecio;
+		Integer nuevasUds;
+		String nombre = Leer.pedirCadena("Elige el nombre del videojuego que quieras modificar");
+		Iterator<Videojuego> itr = lista.iterator();
+		while (itr.hasNext()) {
+			unJuego = itr.next();
+			if (unJuego.getNombre().toLowerCase().equals(nombre.toLowerCase())) {
+				nuevoPrecio = Leer.pedirFloat("Nuevo precio para " + nombre + " ?");
+				unJuego.setPrecio(nuevoPrecio);
+				nuevasUds = Leer.pedirEntero("Nuevas unidades vendidas para " + nombre + " ?");
+				System.out.println(nombre + " modificado");
+			}
+		}
+	}// modificaVideojuegos
+
+	public static int menu() {
+		int op;
+		Leer.mostrarEnPantalla("GESTION DE VIDEOJUEGOS");
+		Leer.mostrarEnPantalla("-------------------");
+		Leer.mostrarEnPantalla("1 - Alta de videojuegos");
+		Leer.mostrarEnPantalla("2 - Baja de videojuegos");
+		Leer.mostrarEnPantalla("3 - Modificación de videojuegos");
+		Leer.mostrarEnPantalla("4 - Listado de videojuegos por nombre");
+		Leer.mostrarEnPantalla("5 - Listado de videojuegos por fabricante");
+		Leer.mostrarEnPantalla("0 - Salir");
+		op = Leer.pedirEntero("Elija opcion", "[0-5]");
+		return op;
+	}
+
+	public static Comparator<Videojuego> compararFabricante = new Comparator<Videojuego>() {
+		public int compare(Videojuego unJuego, Videojuego otroJuego) {
+			String nombreFab1 = unJuego.getFabricante();
+			String nombreFab2 = otroJuego.getFabricante();
+			if (nombreFab1.equals(nombreFab2)) {
+				String nombreJ1 = unJuego.getNombre();
+				String nombreJ2 = otroJuego.getNombre();
+				return nombreJ1.compareTo(nombreJ2);
+			} else {
+				return nombreFab1.compareTo(nombreFab2);
+			}
+		}
+	};
+	public static Comparator<Videojuego> compararNombre = new Comparator<Videojuego>() {
+		public int compare(Videojuego unJuego, Videojuego otroJuego) {
+			String nombreJ1 = unJuego.getNombre();
+			String nombreJ2 = otroJuego.getNombre();
+			return nombreJ1.compareTo(nombreJ2);
+
+		}
+	};
+}// GestionVideojuegos

@@ -49,7 +49,7 @@ public class TreemapNotasAlumnosPorApellido {
 				+ "fichMapAluApe.da3 con toda la informacion del primer ficheroy la adicional ");
 	
 		 
-	//	FicheroObjeto ficheroObjeto2;
+	//	FicheroObjeto ficheroObjeto2;//lee fichero 2
 		TreeMap<String,Integer> mapaAlumnos2=new TreeMap<String, Integer>();// lee del archivo de objetos y se lleva al metodo mosstrar mapa el mapa que queremos ver
 		ficheroObjeto = new FicheroObjeto("fichMapAluApe.da3.txt","I");
 		mapaAlumnos2 = ficheroObjeto.leer();

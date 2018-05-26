@@ -1,0 +1,118 @@
+package selccionEspañola;
+import java.util.*;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		ArrayList<SeleccionFutbol>integrantes= new ArrayList<SeleccionFutbol>();
+
+
+
+		SeleccionFutbol Iniesta = new  Jugador("Andres","iniesta",30,7777,11);
+		SeleccionFutbol Casillas = new  Jugador("Iker","casillas",32,7778,1);
+		SeleccionFutbol Xavi = new  Jugador("Xavi","hernandez",33,7779,12);
+		SeleccionFutbol Xabi = new  Jugador("Xabi","Alonso",30,7780,5);
+		SeleccionFutbol Capdevila = new  Jugador("Joan","Capdevilla",27,7781,2);
+		SeleccionFutbol Ramos = new  Jugador("Sergio","Ramos",27,7781,4);
+		SeleccionFutbol Delbosque = new  Entrenador("Vicente","delBosque",69,7779,777,"Rinoceronte");
+		integrantes.add(Iniesta);
+		integrantes.add(Casillas);
+		integrantes.add(Xavi);
+		integrantes.add(Xabi);
+		integrantes.add(Capdevila);
+		integrantes.add(Ramos);
+		integrantes.add(Delbosque);
+
+
+		mostrarEnPantalla(integrantes);
+
+
+		/*Iniesta.entrenamiento();*/
+		int opcion=0;
+		opcion=Leer.pedirEntero("\n1 para añadir un futbolista\n2 para añadir un entrenador\n3 para borrar futbolista\n4 para borrar entrenador\n5 para mostrar");
+		while (opcion != 0){
+			switch (opcion) {
+			case 1:
+				añadirFutbolista(integrantes);
+				break;
+			case 2:
+				añadirEntrenador(integrantes);
+				break;
+			case 3:
+				borrarJugador(integrantes);
+				break;
+			case 4:
+				String nombre1 = Leer.pedirCadena("Escribe el nombre del entrenador a eliminar");
+				for (SeleccionFutbol seleccionFutbol : integrantes) {
+
+
+					if (seleccionFutbol.getNombre().equals(nombre1)){
+						integrantes.remove(seleccionFutbol);
+						System.out.println ("se ha borrado el elemento " + seleccionFutbol);
+
+					}
+
+				}
+				break;
+			case 5:
+				mostrarEnPantalla(integrantes);
+				break;
+			default:
+				break;
+
+			}
+			
+
+			opcion=Leer.pedirEntero("\n1 para añadir un futbolista\n2 para añadir un entrenador\n3 para borrar futbolista\n4 para borrar entrenador\n5 para mostrar");
+		}
+
+	}
+
+
+	
+	
+
+	private static void borrarJugador(ArrayList<SeleccionFutbol> integrantes) {
+		String nombre2 = Leer.pedirCadena("Escribe el nombre del jugador a eliminar");
+		for (SeleccionFutbol seleccionFutbol : integrantes) {
+
+
+			if (seleccionFutbol.getNombre().equals(nombre2)){
+				integrantes.remove(seleccionFutbol);
+				System.out.println ("se ha borrado el elemento " + seleccionFutbol);
+
+			}
+
+		}
+	}
+
+	private static void mostrarEnPantalla(ArrayList<SeleccionFutbol> integrantes) {
+		for (SeleccionFutbol seleccionFutbol : integrantes) {
+			System.out.println(seleccionFutbol);
+		}
+	}
+
+	private static void añadirFutbolista(ArrayList<SeleccionFutbol> integrantes) {
+		String nombre=Leer.pedirCadena("Introduzca nombre");
+		String apellido=Leer.pedirCadena("Introduzca apellido");
+		Integer edad=Leer.pedirEntero("introduzca el edad");
+		Integer codigo= Leer.pedirEntero("introduzca el codigo");
+		Integer dorsal= Leer.pedirEntero("introduzca el dorsal");
+		SeleccionFutbol nuevo =new Jugador(nombre,apellido,edad,codigo,dorsal);
+		integrantes.add(nuevo);
+	}
+
+	private static void añadirEntrenador(ArrayList<SeleccionFutbol> integrantes) {
+		String nombre=Leer.pedirCadena("Introduzca nombre");
+		String apellido=Leer.pedirCadena("Introduzca apellido");
+		Integer edad=Leer.pedirEntero("introduzca el edad");
+		Integer codigo= Leer.pedirEntero("introduzca el codigo");
+		Integer licencia= Leer.pedirEntero("introduzca la licencia");
+		String Alias = Leer.pedirCadena("introduzca el Alias");
+		SeleccionFutbol nuevo =new Entrenador(nombre,apellido,edad,codigo,licencia,Alias);
+		integrantes.add(nuevo);
+	}
+
+}

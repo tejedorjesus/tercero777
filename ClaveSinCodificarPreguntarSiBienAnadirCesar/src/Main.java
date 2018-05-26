@@ -31,12 +31,22 @@ public class Main{
 			case 1:
 				String usuario;
 				String contrasenia;
-
-				usuario = Leer.pedirCadena("Crear un usuario");
+				usuario = Leer.pedirCadena("Crear un usuario introduzca nombre");
+				while (mapaContrasenias.containsKey(usuario)){
+				
+					usuario = Leer.pedirCadena("el susario ya esta en el sistema introduzca otro nombre");
+				}
+		
+				
+				
+			
 				contrasenia = Leer.pedirCadena("Introduza la contrasenia:", "[a-zA-Z0-9]{6}");
 				Leer.mostrarEnPantalla(
 						"Tu contrasenia y tu usuario son:" + "\n Usuario:" + usuario + "\n Contrasenia:" + contrasenia);
 				mapaContrasenias.put(usuario,contrasenia);
+			
+				
+				
 				break;
 			case 2:
 

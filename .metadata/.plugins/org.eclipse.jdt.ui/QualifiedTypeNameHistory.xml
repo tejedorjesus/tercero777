@@ -13,4 +13,7 @@
 <fullyQualifiedTypeName name="java.util.Random"/>
 <fullyQualifiedTypeName name="java.util.RandomAccess"/>
 <fullyQualifiedTypeName name="java.util.concurrent.ConcurrentHashMap.KeySetView"/>
+<fullyQualifiedTypeName name="selccionEspañola.Jugador"/>
+<fullyQualifiedTypeName name="selccionEspañola.Leer"/>
+<fullyQualifiedTypeName name="selccionEspañola.SeleccionFutbol"/>
 </qualifiedTypeNameHistroy>

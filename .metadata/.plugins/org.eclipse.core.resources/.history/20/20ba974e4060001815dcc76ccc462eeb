@@ -1,0 +1,11 @@
+package selccionEspañola;
+
+public class Entrenador extends SeleccionFutbol{
+	private int licenciaEntrenador;
+
+	public Entrenador(String nombre, String apellido, Integer edad, Integer id, int licenciaEntrenador) {
+		super(nombre, apellido, edad, id);
+		this.licenciaEntrenador = licenciaEntrenador;
+	}
+
+}

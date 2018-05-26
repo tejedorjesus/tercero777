@@ -1,0 +1,7 @@
+package selccionEspañola;
+
+public class Entrenador extends SeleccionFutbol{
+	
+	
+
+}

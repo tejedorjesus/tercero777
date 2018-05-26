@@ -8,6 +8,7 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="package selccionEspañola;"/>
 			<item value="apellidos"/>
 			<item value="Persona"/>
 			<item value="persona"/>
